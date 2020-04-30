@@ -14,7 +14,7 @@ export class HeroesService {
     {
       nombre: 'Batman',
       bio: `Los rasgos principales de Batman se resumen en «destreza física,
-       habilidades deductivas y obsesión». La mayor parte de las características 
+       habilidades deductivas y obsesión». La mayor parte de las características
        básicas de los cómics han variado por las diferentes interpretaciones que le han dado al personaje.`,
       img: 'assets/img/batman.png',
       aparicion: '1939-05-01',
@@ -40,7 +40,7 @@ export class HeroesService {
     },
     {
       nombre: 'Linterna Verde',
-      bio: `Poseedor del anillo de poder que posee la capacidad de crear manifestaciones de luz sólida mediante la 
+      bio: `Poseedor del anillo de poder que posee la capacidad de crear manifestaciones de luz sólida mediante la
       utilización del pensamiento. Es alimentado por la Llama Verde (revisada por escritores posteriores como un
          poder místico llamado Starheart), una llama mágica contenida en dentro de un orbe (el orbe era en realidad
            un meteorito verde de metal que cayó a la Tierra, el cual encontró un fabricante de lámparas llamado Chang)`,
@@ -75,15 +75,20 @@ export class HeroesService {
     console.log(`Saludos desde el servicio heroes`);
   }
 
-  getHeroes(){
+  getHeroes() {
     return this.heroes;
+  }
+
+  getHeroe(idx: number) {
+    console.log(`idx: ${idx}`)
+    return this.heroes[idx];
   }
 }
 
-export interface Heroe{
-  nombre: string,
-  bio: string,
-  img: string,
-  aparicion: string,
-  casa: string,
+export interface Heroe {
+  nombre: string;
+  bio: string;
+  img: string;
+  aparicion: string;
+  casa: string;
 }
