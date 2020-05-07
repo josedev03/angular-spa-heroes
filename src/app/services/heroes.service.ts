@@ -72,7 +72,8 @@ export class HeroesService {
   ];
 
   constructor() {
-    console.log(`Saludos desde el servicio heroes`);
+    // tslint:disable-next-line: no-console
+    console.log(`Servicio listo para usarse`)
   }
 
   getHeroes() {
@@ -80,8 +81,22 @@ export class HeroesService {
   }
 
   getHeroe(idx: number) {
-    console.log(`idx: ${idx}`)
     return this.heroes[idx];
+  }
+
+  buscarHeroes(termino: string){
+    const heroesArr: Heroe[] = [];
+
+    termino = termino.toLowerCase();
+
+    for (const heroe of this.heroes) {
+      const nombre = heroe.nombre.toLowerCase();
+      if(nombre.indexOf(termino) >= 0){
+        heroesArr.push(heroe);
+      }
+    }
+
+    return heroesArr;
   }
 }
 

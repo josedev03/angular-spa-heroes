@@ -1,1 +1,24 @@
-<p>heroe works!</p>
+<h1>{{heroe.nombre}} <small>{{heroe.aparicion}}</small></h1>
+<hr>
+
+<div class="row">
+
+  <div class="col-md-4">
+    <img [src]="heroe.img" class="img-fluid" alt="">
+    <br><br>
+    <a class="btn btn-outline-danger btn-block" [routerLink]="['/heroes']">Regresar</a>
+  </div>
+
+  <div class="col-md-8">
+    <h3>{{heroe.nombre}}</h3>
+    <hr>
+    <p>
+      {{heroe.bio}}
+    </p>
+    <div>
+      <!-- <img src="{{imagen}}" alt=""> -->
+      <img src="assets/img/dc.png" *ngIf="heroe.casa === 'DC'">
+      <img src="assets/img/marvel.png" *ngIf="heroe.casa === 'Marvel'">
+    </div>
+  </div>
+</div>
